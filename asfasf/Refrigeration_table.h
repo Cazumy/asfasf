@@ -15,12 +15,12 @@ public:
 		this->min_temperature_of_Table = obj.min_temperature_of_Table;
 		this->power_of_tabel = obj.power_of_tabel;
 	}
-	void setTemperature(int temp); // установка минимально температуры 
-	int getTemperature() const; // вывод минимально температуры 
+	void setTemperature(int temp); // СѓСЃС‚Р°РЅРѕРІРєР° РјРёРЅРёРјР°Р»СЊРЅРѕ С‚РµРјРїРµСЂР°С‚СѓСЂС‹ 
+	int getTemperature() const; // РІС‹РІРѕРґ РјРёРЅРёРјР°Р»СЊРЅРѕ С‚РµРјРїРµСЂР°С‚СѓСЂС‹ 
 
-	void setNumber_of_box(int number);	// установка количества ящиков холодильного стола
+	void setNumber_of_box(int number);	// СѓСЃС‚Р°РЅРѕРІРєР° РєРѕР»РёС‡РµСЃС‚РІР° СЏС‰РёРєРѕРІ С…РѕР»РѕРґРёР»СЊРЅРѕРіРѕ СЃС‚РѕР»Р°
 	int getNumber_of_box() const;
 
-	void setPower_of_table(float power);	// установка мощности 
+	void setPower_of_table(float power);	// СѓСЃС‚Р°РЅРѕРІРєР° РјРѕС‰РЅРѕСЃС‚Рё 
 	float getPower_of_table() const;
 };
