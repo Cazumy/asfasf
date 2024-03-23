@@ -1,24 +1,24 @@
 #pragma once
 #include "Class_Interface.h";
-#include "Manufacturer.h" // подключение класса перечислений производителей
+#include "Manufacturer.h" // РїРѕРґРєР»СЋС‡РµРЅРёРµ РєР»Р°СЃСЃР° РїРµСЂРµС‡РёСЃР»РµРЅРёР№ РїСЂРѕРёР·РІРѕРґРёС‚РµР»РµР№
 #include <iostream>
 
 class Fridge :virtual public Class_Interface {
-protected:	// объявление элементов данных класса
+protected:	// Р±СЉСЏРІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РґР°РЅРЅС‹С… РєР»Р°СЃСЃР°
 	int number_of_Fridge;
 	double price_of_Fridge;
-	char* model_of_Fridge;			// указатель на 0 элемент массива model
+	char* model_of_Fridge;			// СѓРєР°Р·Р°С‚РµР»СЊ РЅР° 0 СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР° model
 	Manufacturer manufacturer_of_Fridge;
 	int capacity_of_Fridge;
-	static int count_of_Fridge;		// переменная отвечающая за количество объектов Fridge
+	static int count_of_Fridge;		// РїРµСЂРµРјРµРЅРЅР°СЏ РѕС‚РІРµС‡Р°СЋС‰Р°СЏ Р·Р° РєРѕР»РёС‡РµСЃС‚РІРѕ РѕР±СЉРµРєС‚РѕРІ Fridge
 	virtual void displaySmh()const;
 	std::string getClassName()const override;
 	virtual void setSmh();
 public:
 
-	Fridge() : model_of_Fridge(nullptr) { count_of_Fridge++; number_of_Fridge = count_of_Fridge; }		// конструктор по умолчанию с инициализацией некоторых элементов данных
+	Fridge() : model_of_Fridge(nullptr) { count_of_Fridge++; number_of_Fridge = count_of_Fridge; }		// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ СЃ РёРЅРёС†РёР°Р»РёР·Р°С†РёРµР№ РЅРµРєРѕС‚РѕСЂС‹С… СЌР»РµРјРµРЅС‚РѕРІ РґР°РЅРЅС‹С…
 		
-	Fridge(const Fridge& object) {		// конструктор копирования
+	Fridge(const Fridge& object) {		// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 		count_of_Fridge++;
 		price_of_Fridge = object.price_of_Fridge;
 		setModel(object.model_of_Fridge);
@@ -27,24 +27,24 @@ public:
 		number_of_Fridge = count_of_Fridge;
 	}
 
-	~Fridge() {		// деструктор
-		delete[] model_of_Fridge; //удаление выделенной памяти для model;
+	~Fridge() {		// РґРµСЃС‚СЂСѓРєС‚РѕСЂ
+		delete[] model_of_Fridge; //СѓРґР°Р»РµРЅРёРµ РІС‹РґРµР»РµРЅРЅРѕР№ РїР°РјСЏС‚Рё РґР»СЏ model;
 	}
 
-	void setPrice(double price)override; // установка цены холодильника
-	double getPrice() const override; // вывод цены холодильника
+	void setPrice(double price)override; // СѓСЃС‚Р°РЅРѕРІРєР° С†РµРЅС‹ С…РѕР»РѕРґРёР»СЊРЅРёРєР°
+	double getPrice() const override; // РІС‹РІРѕРґ С†РµРЅС‹ С…РѕР»РѕРґРёР»СЊРЅРёРєР°
 
-	void setModel(const char* model)override; // установка имени модели холодильника
-	char* getModel() const override; // вывод имени модели холодильника
+	void setModel(const char* model)override; // СѓСЃС‚Р°РЅРѕРІРєР° РёРјРµРЅРё РјРѕРґРµР»Рё С…РѕР»РѕРґРёР»СЊРЅРёРєР°
+	char* getModel() const override; // РІС‹РІРѕРґ РёРјРµРЅРё РјРѕРґРµР»Рё С…РѕР»РѕРґРёР»СЊРЅРёРєР°
 
-	void setManufacturer()override;		// установка производителя
-	const char* getManufacturer()const override;	// вывод производителя
+	void setManufacturer()override;		// СѓСЃС‚Р°РЅРѕРІРєР° РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ
+	const char* getManufacturer()const override;	// РІС‹РІРѕРґ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ
 
-	void setCapacity(int capacity);		//установка объёма холодильника
-	int getCapacity() const;		// вывод объёма холодильника
+	void setCapacity(int capacity);		//СѓСЃС‚Р°РЅРѕРІРєР° РѕР±СЉС‘РјР° С…РѕР»РѕРґРёР»СЊРЅРёРєР°
+	int getCapacity() const;		// РІС‹РІРѕРґ РѕР±СЉС‘РјР° С…РѕР»РѕРґРёР»СЊРЅРёРєР°
 
-	static int getCount();		//вывод количества объектов Fridge
-	int getNumber()const; // вывод номера холодильника
+	static int getCount();		//РІС‹РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° РѕР±СЉРµРєС‚РѕРІ Fridge
+	int getNumber()const; // РІС‹РІРѕРґ РЅРѕРјРµСЂР° С…РѕР»РѕРґРёР»СЊРЅРёРєР°
 
 	void display() const override;
 	void set() override;
