@@ -16,12 +16,12 @@ public:
 		this->fan_power = obj.fan_power;
 	}
 
-	void setImpeller_diametet(int diameter); // установка диаметра крыльчатки сплит системы
+	void setImpeller_diametet(int diameter); // СѓСЃС‚Р°РЅРѕРІРєР° РґРёР°РјРµС‚СЂР° РєСЂС‹Р»СЊС‡Р°С‚РєРё СЃРїР»РёС‚ СЃРёСЃС‚РµРјС‹
 	int getImpeller_diameter() const;
 
-	void setAir_consumption(int number);	// установка расхода воздуха сплит системы
+	void setAir_consumption(int number);	// СѓСЃС‚Р°РЅРѕРІРєР° СЂР°СЃС…РѕРґР° РІРѕР·РґСѓС…Р° СЃРїР»РёС‚ СЃРёСЃС‚РµРјС‹
 	int getAir_consumption() const;
 
-	void setFan_power(float power);	// установка мощности ветилятора сплит системы
+	void setFan_power(float power);	// СѓСЃС‚Р°РЅРѕРІРєР° РјРѕС‰РЅРѕСЃС‚Рё РІРµС‚РёР»СЏС‚РѕСЂР° СЃРїР»РёС‚ СЃРёСЃС‚РµРјС‹
 	float getFan_power() const;
 };
