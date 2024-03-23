@@ -7,7 +7,7 @@ class Statistics {
 public:
 	void set_All_FromCC(Stack <T*> S);
 
-	void set_current_From——(Stack <T*> S);
+	void set_current_FromCC(Stack <T*> S);
 
 	void set_current_Object(T* obj, int amount);
 
