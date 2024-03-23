@@ -2,16 +2,16 @@
 #include "Confectionery_case.h"
 
 void Confectionery_case::displaySmh()const  {
-	std::cout << "\n\tКоличество полок: " << getNumber_of_shelves();
+	std::cout << "\n\tРљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР»РѕРє: " << getNumber_of_shelves();
 }
 void Confectionery_case::setSmh()  {
 	int amount;
-	std::cout << "Введите количество полок кондитерской витрины: "; std::cin >> amount;
+	std::cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР»РѕРє РєРѕРЅРґРёС‚РµСЂСЃРєРѕР№ РІРёС‚СЂРёРЅС‹: "; std::cin >> amount;
 	setNumber_of_shelves(amount);
 }
 
 std::string Confectionery_case::getClassName() const {
-	return "кондитерская витрина";
+	return "РєРѕРЅРґРёС‚РµСЂСЃРєР°СЏ РІРёС‚СЂРёРЅР°";
 }
-void Confectionery_case::setNumber_of_shelves(int temp) { number_of_shelves = temp; } // установка количества полок кондитерской витрины
-int Confectionery_case::getNumber_of_shelves() const { return number_of_shelves; } // вывод количества полок кондитерской витрины
+void Confectionery_case::setNumber_of_shelves(int temp) { number_of_shelves = temp; } // СѓСЃС‚Р°РЅРѕРІРєР° РєРѕР»РёС‡РµСЃС‚РІР° РїРѕР»РѕРє РєРѕРЅРґРёС‚РµСЂСЃРєРѕР№ РІРёС‚СЂРёРЅС‹
+int Confectionery_case::getNumber_of_shelves() const { return number_of_shelves; } // РІС‹РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° РїРѕР»РѕРє РєРѕРЅРґРёС‚РµСЂСЃРєРѕР№ РІРёС‚СЂРёРЅС‹
