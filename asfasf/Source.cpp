@@ -3,7 +3,7 @@ void Fridge::setPrice(double price) { this->price_of_Fridge = price; }
 double Fridge::getPrice() const { return price_of_Fridge; }
 
 std::string Fridge::getClassName() const{
-	return "холодильник";
+	return "С…РѕР»РѕРґРёР»СЊРЅРёРє";
 }
 void Fridge::setModel(const char* model) {
 	delete[]model_of_Fridge;
@@ -14,7 +14,7 @@ char* Fridge::getModel() const { return model_of_Fridge; }
 
 void Fridge::setManufacturer() {
 	int who;
-	std::cout << "Введите номер производителя (1 - Bosch, 2 - LG, 3 - Samsung, 4 - Haier, 5 - Electrolux, 6 - Hicold): ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ (1 - Bosch, 2 - LG, 3 - Samsung, 4 - Haier, 5 - Electrolux, 6 - Hicold): ";
 	std::cin >> who;
 	this->manufacturer_of_Fridge = static_cast<Manufacturer>(who - 1);
 }
@@ -45,23 +45,23 @@ void Fridge::displaySmh()const {}
 
 void Fridge::display() const {  
 	std::cout << getClassName() <<": \n";
-	std::cout << "\tИмя модели: " << getModel();
-	std::cout << "\n\tЦена модели: " << getPrice();
-	std::cout << "\n\tПроизводитель: " << getManufacturer();
-	std::cout << "\n\tОбъём: " << getCapacity();
+	std::cout << "\tРРјСЏ РјРѕРґРµР»Рё: " << getModel();
+	std::cout << "\n\tР¦РµРЅР° РјРѕРґРµР»Рё: " << getPrice();
+	std::cout << "\n\tРџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ: " << getManufacturer();
+	std::cout << "\n\tРћР±СЉС‘Рј: " << getCapacity();
 	displaySmh();
 }
 void Fridge::set() {
 	double price;
 	char model[100];
 	int capacity;
-	std::cout << "\nЗаполните информацию объекта класса: " << getClassName() << ": \n";
-	std::cout << "Введите цену: "; // инициализация элементов данных объекта
+	std::cout << "\nР—Р°РїРѕР»РЅРёС‚Рµ РёРЅС„РѕСЂРјР°С†РёСЋ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°: " << getClassName() << ": \n";
+	std::cout << "Р’РІРµРґРёС‚Рµ С†РµРЅСѓ: "; // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЌР»РµРјРµРЅС‚РѕРІ РґР°РЅРЅС‹С… РѕР±СЉРµРєС‚Р°
 	std::cin >> price; setPrice(price);
-	std::cout << "Введите имя модели: ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ РјРѕРґРµР»Рё: ";
 	std::cin >> model; setModel(model);
 	setManufacturer();
-	std::cout << "Введите объём: ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РѕР±СЉС‘Рј: ";
 	std::cin >> capacity; setCapacity(capacity);
 	setSmh();
 }
