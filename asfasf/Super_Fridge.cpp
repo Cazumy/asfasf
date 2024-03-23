@@ -2,26 +2,26 @@
 #include "Super_Fridge.h"
 void Super_Fridge::setSmh() {
 	int diameter;
-	std::cout << "Ââåäèòå ğàçìåğ äèàìåòğà êğûëü÷àòêè: ";
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ€Ğ°Ğ·Ğ¼ĞµÑ€ Ğ´Ğ¸Ğ°Ğ¼ĞµÑ‚Ñ€Ğ° ĞºÑ€Ñ‹Ğ»ÑŒÑ‡Ğ°Ñ‚ĞºĞ¸: ";
 	std::cin >> diameter; setImpeller_diametet(diameter);
 	int temperature;
-	std::cout << "Ââåäèòå ìèíèìàëüíî äîïóñòèìóş òåìïåğàòóğó: "; std::cin >> temperature;
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ¼Ğ¸Ğ½Ğ¸Ğ¼Ğ°Ğ»ÑŒĞ½Ğ¾ Ğ´Ğ¾Ğ¿ÑƒÑÑ‚Ğ¸Ğ¼ÑƒÑ Ñ‚ĞµĞ¼Ğ¿ĞµÑ€Ğ°Ñ‚ÑƒÑ€Ñƒ: "; std::cin >> temperature;
 	setTemperature(temperature);
 	float power;
-	std::cout << "Óêàæèòå ìîùíîñòü ìîäåëè: "; std::cin >> power;
+	std::cout << "Ğ£ĞºĞ°Ğ¶Ğ¸Ñ‚Ğµ Ğ¼Ğ¾Ñ‰Ğ½Ğ¾ÑÑ‚ÑŒ Ğ¼Ğ¾Ğ´ĞµĞ»Ğ¸: "; std::cin >> power;
 	setPower_of_table(power);
 	int number;
-	std::cout << "Ââåäèòå êîëè÷åñòâî ÿùèêîâ: ";
+	std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑÑ‰Ğ¸ĞºĞ¾Ğ²: ";
 	std::cin >> number; setNumber_of_box(number);
 }
 void Super_Fridge::displaySmh()const  {
-	std::cout << "\n\tÄèàìåòğ êğûëü÷àòêè: " << getImpeller_diameter();
-	std::cout << "\n\tÌèíèìàëüíàÿ òåìïåğàòóğà: " << getTemperature();
-	std::cout << "\n\tÌîùíîñòü ìîäåëè: " << getPower_of_table();
-	std::cout << "\n\tÊîëè÷åñòâî ÿùèêîâ: " << getNumber_of_box();
+	std::cout << "\n\tĞ”Ğ¸Ğ°Ğ¼ĞµÑ‚Ñ€ ĞºÑ€Ñ‹Ğ»ÑŒÑ‡Ğ°Ñ‚ĞºĞ¸: " << getImpeller_diameter();
+	std::cout << "\n\tĞœĞ¸Ğ½Ğ¸Ğ¼Ğ°Ğ»ÑŒĞ½Ğ°Ñ Ñ‚ĞµĞ¼Ğ¿ĞµÑ€Ğ°Ñ‚ÑƒÑ€Ğ°: " << getTemperature();
+	std::cout << "\n\tĞœĞ¾Ñ‰Ğ½Ğ¾ÑÑ‚ÑŒ Ğ¼Ğ¾Ğ´ĞµĞ»Ğ¸: " << getPower_of_table();
+	std::cout << "\n\tĞšĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑÑ‰Ğ¸ĞºĞ¾Ğ²: " << getNumber_of_box();
 }
 std::string Super_Fridge::getClassName()const  {
-	return "ñóïåğ õîëîäèëüíèê";
+	return "ÑÑƒĞ¿ĞµÑ€ Ñ…Ğ¾Ğ»Ğ¾Ğ´Ğ¸Ğ»ÑŒĞ½Ğ¸Ğº";
 }
 
 void Super_Fridge::display()const {
