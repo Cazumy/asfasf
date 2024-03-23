@@ -1,45 +1,45 @@
 #pragma once
 #include "Statistics.h"
 template <typename T>
-void Statistics<T>::set_All_FromCC(Stack <T*> S) {		// устанавливает все объекты из класса контейнер в словарь включая копии
+void Statistics<T>::set_All_FromCC(Stack <T*> S) {		// СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РІСЃРµ РѕР±СЉРµРєС‚С‹ РёР· РєР»Р°СЃСЃР° РєРѕРЅС‚РµР№РЅРµСЂ РІ СЃР»РѕРІР°СЂСЊ РІРєР»СЋС‡Р°СЏ РєРѕРїРёРё
 	while (!S.isEmpty()) {
-		T* current = S.pop(); // Извлекаем указатель на холодильник из стека
-		T* copy = nullptr; // Создаем указатель на копию холодильника
-		for (auto it = dictionary.begin(); it != dictionary.end(); ++it) {	// Проверяем, есть ли уже копия с таким именем модели
+		T* current = S.pop(); // РР·РІР»РµРєР°РµРј СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С…РѕР»РѕРґРёР»СЊРЅРёРє РёР· СЃС‚РµРєР°
+		T* copy = nullptr; // РЎРѕР·РґР°РµРј СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РєРѕРїРёСЋ С…РѕР»РѕРґРёР»СЊРЅРёРєР°
+		for (auto it = dictionary.begin(); it != dictionary.end(); ++it) {	// РџСЂРѕРІРµСЂСЏРµРј, РµСЃС‚СЊ Р»Рё СѓР¶Рµ РєРѕРїРёСЏ СЃ С‚Р°РєРёРј РёРјРµРЅРµРј РјРѕРґРµР»Рё
 			std::string a = it->first->getModel(); std::string b = current->getModel();
-			if (a == b) { // Если нашли копию
-				copy = it->first; // copy теперь указывает на копию
+			if (a == b) { // Р•СЃР»Рё РЅР°С€Р»Рё РєРѕРїРёСЋ
+				copy = it->first; // copy С‚РµРїРµСЂСЊ СѓРєР°Р·С‹РІР°РµС‚ РЅР° РєРѕРїРёСЋ
 				break;
 			}
 		}
-		if (copy == nullptr) {	// Если копии нет, создаем ее
+		if (copy == nullptr) {	// Р•СЃР»Рё РєРѕРїРёРё РЅРµС‚, СЃРѕР·РґР°РµРј РµРµ
 			copy = current;
-			dictionary[copy] = 1; // Добавляем копию в словарь
+			dictionary[copy] = 1; // Р”РѕР±Р°РІР»СЏРµРј РєРѕРїРёСЋ РІ СЃР»РѕРІР°СЂСЊ
 		}
-		else { dictionary[copy]++; }// Увеличиваем счетчик копии
+		else { dictionary[copy]++; }// РЈРІРµР»РёС‡РёРІР°РµРј СЃС‡РµС‚С‡РёРє РєРѕРїРёРё
 	}
 }
 template <typename T>
-void Statistics<T>::set_current_FromСС(Stack <T*> S) {
+void Statistics<T>::set_current_FromРЎРЎ(Stack <T*> S) {
 	S.Sdisplay();
-	std::string name; std::cout << "Введите имя модели нужного объекта: ";
+	std::string name; std::cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ РјРѕРґРµР»Рё РЅСѓР¶РЅРѕРіРѕ РѕР±СЉРµРєС‚Р°: ";
 	std::cin >> name;
 	T* tmp;
 	bool find = false;
 	while (!S.isEmpty()) {
 		tmp = S.pop();
-		if (tmp->getClassName() == name) { find = true; break; }		//если такой объект существует, то меняем find на true
+		if (tmp->getClassName() == name) { find = true; break; }		//РµСЃР»Рё С‚Р°РєРѕР№ РѕР±СЉРµРєС‚ СЃСѓС‰РµСЃС‚РІСѓРµС‚, С‚Рѕ РјРµРЅСЏРµРј find РЅР° true
 	}
 	if (!find) {
-		throw std::runtime_error("Неверное имя\n");		//если такого объекта не существует, то выход из функции
+		throw std::runtime_error("РќРµРІРµСЂРЅРѕРµ РёРјСЏ\n");		//РµСЃР»Рё С‚Р°РєРѕРіРѕ РѕР±СЉРµРєС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, С‚Рѕ РІС‹С…РѕРґ РёР· С„СѓРЅРєС†РёРё
 	}
-	int amount; std::cout << "Введите количество копий: "; std::cin >> amount;
+	int amount; std::cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРїРёР№: "; std::cin >> amount;
 	for (int i = 0; i < amount; i++) { dictionary[tmp]++; }
 }
 template <typename T>
-void Statistics<T>::set_current_Object(T* obj, int amount) { //заносит в словарь ключ и количество ключей
-	if (amount < 0) {	// количество меньше нуля
-		throw std::out_of_range("Количество копий меньше нуля\n");
+void Statistics<T>::set_current_Object(T* obj, int amount) { //Р·Р°РЅРѕСЃРёС‚ РІ СЃР»РѕРІР°СЂСЊ РєР»СЋС‡ Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РєР»СЋС‡РµР№
+	if (amount < 0) {	// РєРѕР»РёС‡РµСЃС‚РІРѕ РјРµРЅСЊС€Рµ РЅСѓР»СЏ
+		throw std::out_of_range("РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРїРёР№ РјРµРЅСЊС€Рµ РЅСѓР»СЏ\n");
 		return;
 	}
 	dictionary[obj] = amount;
@@ -47,7 +47,7 @@ void Statistics<T>::set_current_Object(T* obj, int amount) { //заносит в словарь
 template <typename T>
 void Statistics<T>::add_current_Object(T* obj) {
 	if (dictionary.find(obj) == dictionary.end()) {
-		throw std::runtime_error("Объекта не существует\n");
+		throw std::runtime_error("РћР±СЉРµРєС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚\n");
 	}
 	dictionary[obj]++;
 }
@@ -61,7 +61,7 @@ void Statistics<T>::delete_current_Statistics(T* obj) {
 }
 template <typename T>
 void Statistics<T>::display_Statistics() const {
-	for (const auto& tmp : dictionary) { //отображение названии модели и её количества в словаре
+	for (const auto& tmp : dictionary) { //РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РЅР°Р·РІР°РЅРёРё РјРѕРґРµР»Рё Рё РµС‘ РєРѕР»РёС‡РµСЃС‚РІР° РІ СЃР»РѕРІР°СЂРµ
 		std::cout << "Model - " << tmp.first->getModel() << ", amount: " << tmp.second << "\n";
 	}
 }
@@ -69,11 +69,11 @@ template <typename T>
 double Statistics<T>::count_Statistics() {
 	double total = 0, temp = 0;
 	for (const auto& tmp : dictionary) {
-		temp = tmp.first->getPrice() * tmp.second;	//цена объекта умножается на количество его копий
+		temp = tmp.first->getPrice() * tmp.second;	//С†РµРЅР° РѕР±СЉРµРєС‚Р° СѓРјРЅРѕР¶Р°РµС‚СЃСЏ РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РµРіРѕ РєРѕРїРёР№
 		total += temp;
 	}
 	std::cout << "Total price = " << total << "\n";
 	return total;
 }
 template <typename T>
-void Statistics<T>::clean_Statistics() { dictionary.clear(); } // удаление словаря
+void Statistics<T>::clean_Statistics() { dictionary.clear(); } // СѓРґР°Р»РµРЅРёРµ СЃР»РѕРІР°СЂСЏ
