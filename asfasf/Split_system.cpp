@@ -1,31 +1,31 @@
 #pragma once
 #include "Split_system.h"
 std::string Split_system::getClassName() const {
-	return "сплит система";
+	return "СЃРїР»РёС‚ СЃРёСЃС‚РµРјР°";
 }
 
 void Split_system::setSmh()  {
 	int diameter;
-	std::cout << "Введите размер диаметра крыльчатки: ";
+	std::cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РґРёР°РјРµС‚СЂР° РєСЂС‹Р»СЊС‡Р°С‚РєРё: ";
 	std::cin >> diameter; setImpeller_diametet(diameter);
 	int consumption;
-	std::cout << "Укажите расход воздуха: "; std::cin >> consumption;
+	std::cout << "РЈРєР°Р¶РёС‚Рµ СЂР°СЃС…РѕРґ РІРѕР·РґСѓС…Р°: "; std::cin >> consumption;
 	setAir_consumption(consumption);
 	float power;
-	std::cout << "Укажите мощность вентилятора: "; std::cin >> power;
+	std::cout << "РЈРєР°Р¶РёС‚Рµ РјРѕС‰РЅРѕСЃС‚СЊ РІРµРЅС‚РёР»СЏС‚РѕСЂР°: "; std::cin >> power;
 	setFan_power(power);
 }
 void Split_system::displaySmh()const  {
-	std::cout << "\n\tДиаметр крыльчатки: " << getImpeller_diameter();
-	std::cout << "\n\tМощность вентилятора: " << getFan_power();
-	std::cout << "\n\tРасход воздуха: " << getAir_consumption();
+	std::cout << "\n\tР”РёР°РјРµС‚СЂ РєСЂС‹Р»СЊС‡Р°С‚РєРё: " << getImpeller_diameter();
+	std::cout << "\n\tРњРѕС‰РЅРѕСЃС‚СЊ РІРµРЅС‚РёР»СЏС‚РѕСЂР°: " << getFan_power();
+	std::cout << "\n\tР Р°СЃС…РѕРґ РІРѕР·РґСѓС…Р°: " << getAir_consumption();
 }
 
-void Split_system::setImpeller_diametet(int diameter) { impeller_diameter = diameter; } // установка диаметра крыльчатки сплит системы
+void Split_system::setImpeller_diametet(int diameter) { impeller_diameter = diameter; } // СѓСЃС‚Р°РЅРѕРІРєР° РґРёР°РјРµС‚СЂР° РєСЂС‹Р»СЊС‡Р°С‚РєРё СЃРїР»РёС‚ СЃРёСЃС‚РµРјС‹
 int Split_system::getImpeller_diameter() const { return impeller_diameter; }
 
-void Split_system::setAir_consumption(int number) { air_consumption = number; }	// установка расхода воздуха сплит системы
+void Split_system::setAir_consumption(int number) { air_consumption = number; }	// СѓСЃС‚Р°РЅРѕРІРєР° СЂР°СЃС…РѕРґР° РІРѕР·РґСѓС…Р° СЃРїР»РёС‚ СЃРёСЃС‚РµРјС‹
 int Split_system::getAir_consumption() const { return air_consumption; }
 
-void Split_system::setFan_power(float power) { fan_power = power; }	// установка мощности ветилятора сплит системы
+void Split_system::setFan_power(float power) { fan_power = power; }	// СѓСЃС‚Р°РЅРѕРІРєР° РјРѕС‰РЅРѕСЃС‚Рё РІРµС‚РёР»СЏС‚РѕСЂР° СЃРїР»РёС‚ СЃРёСЃС‚РµРјС‹
 float Split_system::getFan_power() const { return fan_power; }
